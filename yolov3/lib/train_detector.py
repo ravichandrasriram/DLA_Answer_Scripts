@@ -437,7 +437,7 @@ class Detector():
 
         #Scheduler
         self.system_dict["local"]["scheduler"] = lr_scheduler.MultiStepLR(self.system_dict["local"]["optimizer"], 
-                                                    milestones=[round(self.system_dict["params"]["epochs"] * x) for x in [0.4, 0.6, 0.8]], gamma=0.1)
+                                                    milestones=[round(self.system_dict["params"]["epochs"] * x) for x in [0.6, 0.8]], gamma=0.1)
         self.system_dict["local"]["scheduler"].last_epoch = self.system_dict["local"]["start_epoch"] - 1
 
 
