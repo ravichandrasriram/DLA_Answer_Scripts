@@ -915,13 +915,12 @@ def plot_images(imgs, targets, paths=None, fname='images.jpg'):
     bs, _, h, w = imgs.shape  # batch size, _, height, width
     bs = min(bs, 16)  # limit plot to 16 images
     ns = np.ceil(bs ** 0.5)  # number of subplots
-    print(ns)
-    print('\n')
+    
     for i in range(bs):
         boxes = xywh2xyxy(targets[targets[:, 0] == i, 2:6]).T
         boxes[[0, 2]] *= w
         boxes[[1, 3]] *= h
-        plt.subplot(ns, ns, i + 1).imshow(imgs[i].transpose(1, 2, 0))
+        plt.subplot(int(ns), int(ns), i + 1).imshow(imgs[i].transpose(1, 2, 0))
         plt.plot(boxes[[0, 2, 2, 0, 0]], boxes[[1, 1, 3, 3, 1]], '.-')
         plt.axis('off')
         if paths is not None:
