@@ -652,7 +652,7 @@ class Detector():
                 # Plot images with bounding boxes
                 if ni == 0:
                     fname = 'train_batch%g.png' % i
-                    plot_images(imgs=imgs, targets=targets, paths=paths, fname=fname)
+                    #plot_images(imgs=imgs, targets=targets, paths=paths, fname=fname)
                     if self.system_dict["local"]["tb_writer"]:
                         self.system_dict["local"]["tb_writer"].add_image(fname, cv2.imread(fname)[:, :, ::-1], dataformats='HWC')
 
