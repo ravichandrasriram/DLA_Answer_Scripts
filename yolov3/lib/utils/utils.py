@@ -915,7 +915,6 @@ def plot_images(imgs, targets, paths=None, fname='images.jpg'):
     bs, _, h, w = imgs.shape  # batch size, _, height, width
     bs = min(bs, 16)  # limit plot to 16 images
     ns = np.ceil(bs ** 0.5)  # number of subplots
-    print(ns)
 
     for i in range(bs):
         boxes = xywh2xyxy(targets[targets[:, 0] == i, 2:6]).T
