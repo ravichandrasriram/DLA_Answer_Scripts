@@ -316,8 +316,12 @@ def load_darknet_weights(self, weights, cutoff=-1):
         weights = np.fromfile(f, dtype=np.float32)  # the rest are weights
 
     ptr = 0
+    temp = 0
     for i, (mdef, module) in enumerate(zip(self.module_defs[:cutoff], self.module_list[:cutoff])):
         if mdef['type'] == 'convolutional':
+            temp = temp + 1
+            if temp in [23,24,25,26,36,37,38,39,40,41,42,43,49,50,51,52]:
+                continue
             conv_layer = module[0]
             if mdef['batch_normalize']:
                 # Load BN bias, weights, running mean and running variance
