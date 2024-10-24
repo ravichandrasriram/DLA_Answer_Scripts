@@ -74,10 +74,10 @@ class Detector():
         Returns:
             None
         '''
-        self.system_dict["fixed_params"]["wdir"] = '/content/drive/My Drive/Datasets/Clinical_Reports/Results/weights' + os.sep  
+        self.system_dict["fixed_params"]["wdir"] = '/content/drive/My Drive/Datasets/Answer-scripts/Results/weights' + os.sep  
         self.system_dict["fixed_params"]["last"] = self.system_dict["fixed_params"]["wdir"] + 'last.pt'
         self.system_dict["fixed_params"]["best"] = self.system_dict["fixed_params"]["wdir"] + 'best.pt'
-        self.system_dict["fixed_params"]["results_file"] = '/content/drive/My Drive/Datasets/Clinical_Reports/Results/results.txt'
+        self.system_dict["fixed_params"]["results_file"] = '/content/drive/My Drive/Datasets/Answer-scripts/Results/results.txt'
 
         self.system_dict["fixed_params"]["hyp"] = {'giou': 3.54,  # giou loss gain
                                                    'cls': 37.4,  # cls loss gain
@@ -294,7 +294,7 @@ class Detector():
         self.system_dict["params"]["num_generations"] = num_generations;
         self.system_dict["params"]["bucket"] = "";
         #self.system_dict["params"]["weights"] = "";
-        self.system_dict["params"]["weights"] = '/content/drive/My Drive/Datasets/Clinical_Reports/yolov3.weights';
+        self.system_dict["params"]["weights"] = '/content/drive/My Drive/Datasets/Answer-scripts/yolov3.weights';
         self.system_dict["params"]["arc"] = "default";
         self.system_dict["params"]["name"] = "";
         self.system_dict["params"]["device"] = gpu_devices;
