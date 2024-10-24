@@ -324,7 +324,7 @@ class LoadImagesAndLabels(Dataset):  # for training/testing
                 elif mini > 1:
                     shapes[i] = [1, 1 / mini]
 
-            self.batch_shapes = np.ceil(np.array(shapes) * img_size / 32.).astype(np.int) * 32
+            self.batch_shapes = np.ceil(np.array(shapes) * img_size / 32.).astype(np.int64) * 32
 
         # Preload labels (required for weighted CE training)
         self.imgs = [None] * n
@@ -379,7 +379,7 @@ class LoadImagesAndLabels(Dataset):  # for training/testing
                             b = x[1:] * np.array([w, h, w, h])  # box
                             b[2:] = b[2:].max()  # rectangle to square
                             b[2:] = b[2:] * 1.3 + 30  # pad
-                            b = xywh2xyxy(b.reshape(-1, 4)).ravel().astype(np.int)
+                            b = xywh2xyxy(b.reshape(-1, 4)).ravel().astype(np.int64)
 
                             b[[0, 2]] = np.clip(b[[0, 2]], 0, w)  # clip boxes outside of image
                             b[[1, 3]] = np.clip(b[[1, 3]], 0, h)
