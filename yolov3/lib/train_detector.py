@@ -293,7 +293,8 @@ class Detector():
         self.system_dict["params"]["evolve"] = evolve;
         self.system_dict["params"]["num_generations"] = num_generations;
         self.system_dict["params"]["bucket"] = "";
-        self.system_dict["params"]["weights"] = '/content/drive/My Drive/Datasets/Answer-scripts/backup149.pt';
+        self.system_dict["params"]["weights"] ="";
+        #self.system_dict["params"]["weights"] = '/content/drive/My Drive/Datasets/Answer-scripts/backup149.pt';
         #self.system_dict["params"]["weights"] = '/content/drive/My Drive/Datasets/Clinical_Reports/yolov3.weights';
         self.system_dict["params"]["arc"] = "default";
         self.system_dict["params"]["name"] = "";
@@ -428,8 +429,8 @@ class Detector():
                 with open(self.system_dict["fixed_params"]["results_file"], 'w') as file:
                     file.write(chkpt['training_results'])
 
-            #self.system_dict["local"]["start_epoch"] = chkpt['epoch'] + 1
-            self.system_dict["local"]["start_epoch"] = 1
+            self.system_dict["local"]["start_epoch"] = chkpt['epoch'] + 1
+            #self.system_dict["local"]["start_epoch"] = 1
             del chkpt
 
         elif len(self.system_dict["params"]["weights"]) > 0:  # darknet format
