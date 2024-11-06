@@ -294,7 +294,7 @@ class Detector():
         self.system_dict["params"]["num_generations"] = num_generations;
         self.system_dict["params"]["bucket"] = "";
         #self.system_dict["params"]["weights"] ="";
-        self.system_dict["params"]["weights"] = '/content/drive/My Drive/Datasets/Answer-scripts/backup149.pt';
+        self.system_dict["params"]["weights"] = '/content/drive/My Drive/Datasets/Answer-scripts/backup102.pt';
         #self.system_dict["params"]["weights"] = '/content/drive/My Drive/Datasets/Clinical_Reports/yolov3.weights';
         self.system_dict["params"]["arc"] = "default";
         self.system_dict["params"]["name"] = "";
